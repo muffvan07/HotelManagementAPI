@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "ba86a8dd-4461-4591-856c-9ca2286cb420",
+		"name": "Hotel Management Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Requests",
+			"item": [
+				{
+					"name": "GET Hotels in Alphabetical Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44307/api/hotel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Room by Price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/room?price=1299",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"room"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "1299"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Room by Pincode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/room?pincode=390022",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"room"
+							],
+							"query": [
+								{
+									"key": "pincode",
+									"value": "390022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Room by City",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/room?city=Ahmedabad",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"room"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Ahmedabad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Room by Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/room?category=Deluxe",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"room"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Deluxe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Available Room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "killbill",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "Mufaddal",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST Requests",
+			"item": [
+				{
+					"name": "POST Hotels and Rooms",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"HotelName\": \"Umaid Bhavan\",\n        \"Address\": \"Rasalpur\",\n        \"City\": \"Udaipur\",\n        \"Pincode\": 654568,\n        \"ContactNumber\": 654123,\n        \"ContactPerson\": \"Emiley Kin\",\n        \"IsActive\": 0,\n        \"CreatedBy\": \"Admin\",\n        \"UpdatedBy\": \"Admin\",\n        \"Website\": \"umaidbhavan@hotel.com\",\n        \"Facebook\": \"UmaidBhavan\",\n        \"Twitter\": \"@umaidbhavan\",\n        \"Rooms\": [\n            {\n                \"roomName\": \"Queen\",\n                \"Roomcategory\": \"Deluxe\",\n                \"Roomprice\": 1999,\n                \"CreatedBY\": \"Admin\",\n                \"UpdatedBy\": \"Admin\",\n                \"IsActive\": 1\n            },\n            {\n                \"roomName\": \"King\",\n                \"Roomcategory\": \"Super Deluxe\",\n                \"Roomprice\": 1599,\n                \"CreatedBY\": \"Admin\",\n                \"UpdatedBy\": \"Admin\",\n                \"IsActive\": 0\n            },\n            {\n                \"roomName\": \"Single\",\n                \"Roomcategory\": \"Deluxe\",\n                \"Roomprice\": 1899,\n                \"CreatedBY\": \"Admin\",\n                \"UpdatedBy\": \"Admin\",\n                \"IsActive\": 1\n            },\n            {\n                \"roomName\": \"Double\",\n                \"Roomcategory\": \"Super Deluxe\",\n                \"Roomprice\": 1999,\n                \"CreatedBY\": \"Admin\",\n                \"UpdatedBy\": \"Admin\",\n                \"IsActive\": 0\n            },\n            {\n                \"roomName\": \"Quad\",\n                \"Roomcategory\": \"Common\",\n                \"Roomprice\": 1599,\n                \"CreatedBY\": \"Admin\",\n                \"UpdatedBy\": \"Admin\",\n                \"IsActive\": 1\n            }\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/hotel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Book Room",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "killbill",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Mufaddal",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"HotelName\": \"The Grand Bhagwati\",\n    \"BookingDate\": \"2020-06-25\",\n    \"RoomName\": \"Queen\",\n    \"Status\": \"Optional\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/booking",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "killbill",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "Mufaddal",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PUT Requests",
+			"item": [
+				{
+					"name": "PUT Booking Date Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"BookingId\" : 15,\n\t\"BookingDate\" : \"2021-08-19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/update/date",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"update",
+								"date"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Booking Status Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"BookingId\" : 16,\n\t\"Status\" : \"Definitive\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/update/status",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"update",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "killbill",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "Mufaddal",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DELETE Requests",
+			"item": [
+				{
+					"name": "DELETE Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44307/api/delete/booking?id=16",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44307",
+							"path": [
+								"api",
+								"delete",
+								"booking"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "killbill",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "Mufaddal",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "killbill",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Mufaddal",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
